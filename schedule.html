@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- ========================================
+     MUSICFEST 25 - SCHEDULE PAGE
+     ========================================
+     Festival schedule with day switcher and timetable grid
+     ======================================== -->
+<html lang="en">
+<head>
+    <!-- Page Metadata and Stylesheets -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>MusicFest Schedule</title>
+</head>
+<body>
+<!-- Main Content -->
+<!-- Navigation Menu -->
+
+<aside class="dropdown-container">
+    <button class="dropdown-btn" onclick="toggle()">Menu</button>
+    <div class="dropdown-menu" id="menu">
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="main.html">HOME</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="lineup.html">LINEUP</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="tickets.html">TICKETS</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="schedule.html">SCHEDULE</a></button>
+    </div>
+</aside>
+
+<h1>Schedule</h1>
+<h2>Stay tuned in on the artist times and days below!</h2>
+
+<!-- Day Switcher -->
+<div class="day-switcher">
+    <button class="day-btn active" onclick="switchDay(1)">DAY 1</button>
+    <button class="day-btn" onclick="switchDay(2)">DAY 2</button>
+</div>
+<br><br>
+<!-- Day 1 Schedule -->
+<div class="schedule-grid" id="day1-schedule">
+    <!-- Header Row -->
+    <div class="schedule-cell header">TIME</div>
+    <div class="schedule-cell header">MAIN<br>STAGE</div>
+    <div class="schedule-cell header">ECLIPSE<br>TENT</div>
+    <div class="schedule-cell header">UNDERGROUND</div>
+
+    <!-- 14:00 Row -->
+    <div class="schedule-cell time">14:00</div>
+    <div class="schedule-cell">
+        <div class="artist-name">GALDIVES</div>
+        <div class="stage-name">MAIN STAGE</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">CHASE<br>SHAKUR</div>
+        <div class="stage-name">ECLIPSE TENT</div>
+    </div>
+    <div class="schedule-cell empty">
+        <div class="artist-name">---</div>
+    </div>
+
+    <!-- 22:30 Row -->
+    <div class="schedule-cell time">22:30</div>
+    <div class="schedule-cell">
+        <div class="artist-name">JORJA<br>SMITH</div>
+        <div class="stage-name">MAIN STAGE</div>
+    </div>
+    <div class="schedule-cell empty">
+        <div class="artist-name">---</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">SMINO</div>
+        <div class="stage-name">UNDERGROUND</div>
+    </div>
+
+    <!-- 00:00 Row -->
+    <div class="schedule-cell time">00:00</div>
+    <div class="schedule-cell">
+        <div class="artist-name">SAMPHA</div>
+        <div class="stage-name">MAIN STAGE</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">CHASE<br>SHAKUR</div>
+        <div class="stage-name">ECLIPSE TENT</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">GALDIVES</div>
+        <div class="stage-name">UNDERGROUND</div>
+    </div>
+
+    <!-- 2:30 Row -->
+    <div class="schedule-cell time">2:30</div>
+    <div class="schedule-cell empty">
+        <div class="artist-name">---</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">SONDER</div>
+        <div class="stage-name">ECLIPSE TENT</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">JORJA<br>SMITH</div>
+        <div class="stage-name">UNDERGROUND</div>
+    </div>
+</div>
+
+<!-- Day 2 Schedule -->
+<div class="schedule-grid" id="day2-schedule" style="display: none;">
+    <!-- Header Row -->
+    <div class="schedule-cell header">TIME</div>
+    <div class="schedule-cell header">MAIN<br>STAGE</div>
+    <div class="schedule-cell header">ECLIPSE<br>TENT</div>
+    <div class="schedule-cell header">UNDERGROUND</div>
+
+    <!-- 14:00 Row -->
+    <div class="schedule-cell time">14:00</div>
+    <div class="schedule-cell">
+        <div class="artist-name">SMINO</div>
+        <div class="stage-name">MAIN STAGE</div>
+    </div>
+    <div class="schedule-cell empty">
+        <div class="artist-name">---</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">SONDER</div>
+        <div class="stage-name">UNDERGROUND</div>
+    </div>
+
+    <!-- 22:30 Row -->
+    <div class="schedule-cell time">22:30</div>
+    <div class="schedule-cell empty">
+        <div class="artist-name">---</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">GALDIVES</div>
+        <div class="stage-name">ECLIPSE TENT</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">CHASE<br>SHAKUR</div>
+        <div class="stage-name">UNDERGROUND</div>
+    </div>
+
+    <!-- 00:00 Row -->
+    <div class="schedule-cell time">00:00</div>
+    <div class="schedule-cell">
+        <div class="artist-name">JORJA<br>SMITH</div>
+        <div class="stage-name">MAIN STAGE</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">SAMPHA</div>
+        <div class="stage-name">ECLIPSE TENT</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">SMINO</div>
+        <div class="stage-name">UNDERGROUND</div>
+    </div>
+
+    <!-- 2:30 Row -->
+    <div class="schedule-cell time">2:30</div>
+    <div class="schedule-cell">
+        <div class="artist-name">SONDER</div>
+        <div class="stage-name">MAIN STAGE</div>
+    </div>
+    <div class="schedule-cell">
+        <div class="artist-name">JORJA<br>SMITH</div>
+        <div class="stage-name">ECLIPSE TENT</div>
+    </div>
+    <div class="schedule-cell empty">
+        <div class="artist-name">---</div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

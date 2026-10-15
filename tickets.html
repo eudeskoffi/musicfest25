@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- ========================================
+     MUSICFEST 25 - TICKETS PAGE
+     ========================================
+     Ticket selection and purchase page with payment form
+     ======================================== -->
+<html lang="en">
+<head>
+    <!-- Page Metadata and Stylesheets -->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="design.css">
+    <title>Tickets</title>
+</head>
+
+<body>
+<!-- Main Content -->
+<!-- Navigation Menu -->
+<aside class="dropdown-container">
+    <button class="dropdown-btn" onclick="toggle()">Menu</button>
+
+    <div class="dropdown-menu" id="menu">
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="main.html">HOME</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="lineup.html">LINEUP</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="tickets.html">TICKETS</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="schedule.html">SCHEDULE</a></button>
+    </div>
+</aside>
+
+
+<h1>Tickets</h1>
+<div id="ticket-cards">
+    <div class="ticket-card ga-ticket" onclick="incrementTicket('ga-ticket')">
+        <h4>General admission.</h4>
+        <p class="ticket-text">No reserved Seats.</p>
+        <p class="ticket-text">Latest entry at 10.30pm.</p>
+        <p class="ticket-text">Earlier booking, the better the seats.</p>
+        <p class="ticket-text">£125</p>
+    </div>
+
+    <br><br>
+
+    <div class="ticket-card premium-ticket" onclick="incrementTicket('premium-ticket')">
+        <h4>Premium.</h4>
+        <p class="ticket-text">Can reserve any seat except 1st row.</p>
+        <p class="ticket-text">Latest entry at 11.30pm.</p>
+        <p class="ticket-text">Best Value ticket.</p>
+        <p class="ticket-text">£150</p>
+    </div>
+
+    <br><br>
+
+    <div class="ticket-card vip-ticket" onclick="incrementTicket('vip-ticket')">
+        <h4>VIP.</h4>
+        <p class="ticket-text">Can reserve any seat.</p>
+        <p class="ticket-text">Latest entry at midnight.</p>
+        <p class="ticket-text"><b>Meet the artists after Musicfest.</b></p>
+        <p class="ticket-text">£220</p>
+    </div>
+</div>
+
+
+<section class="space"></section>
+
+
+<br><br><br>
+
+
+<form id="main-form">
+    <h5>Name</h5>
+
+    <label for="FirstName"></label>
+    <input id="FirstName" name="FirstName" type="text" placeholder="Enter First name" required>
+    <p id="FirstName-error" class="error-message">This field is required</p>
+
+    <br>
+
+    <label for="LastName"></label>
+    <input id="LastName" name="LastName" type="text" placeholder="Enter last name" required>
+    <p id="LastName-error" class="error-message">This field is required</p>
+
+    <br><br>
+
+    <h5>Contact Details</h5>
+
+    <label for="Email"></label>
+    <input id="Email" name="Email" type="text" placeholder="Email" required>
+    <p id="Email-error" class="error-message">This field is required</p>
+
+    <br>
+
+    <label for="PhoneNumber"></label>
+    <input id="PhoneNumber" name="PhoneNumber" type="text" placeholder="Enter your phone number" required>
+    <p id="PhoneNumber-error" class="error-message">This field is required</p>
+
+    <br><br>
+
+    <h5>Ticket types</h5>
+
+    <section class="ticket-section" id="ticket-select">
+
+        <!-- General -->
+        <div class="ticket-buy">
+            <div class="ticket-info">
+                <p class="ticket-name">General Admission</p>
+                <p class="ticket-desc">Standard MusicFest Ticket <br>£125 inc. VAT</p>
+            </div>
+            <div class="quantity-selector">
+                <label for="qty1">Qty</label>
+                <select id="qty1" onchange="manualUpdate('ga-ticket', this.value)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Premium -->
+        <div class="ticket-buy">
+            <div class="ticket-info">
+                <p class="ticket-name">Premium</p>
+                <p class="ticket-desc">High-class MusicFest Ticket <br>£150 inc. VAT</p>
+            </div>
+            <div class="quantity-selector">
+                <label for="qty2">Qty</label>
+                <select id="qty2" onchange="manualUpdate('premium-ticket', this.value)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- VIP -->
+        <div class="ticket-buy">
+            <div class="ticket-info">
+                <p class="ticket-name">VIP</p>
+                <p class="ticket-desc">Luxury MusicFest Ticket <br>£220 inc. VAT</p>
+            </div>
+            <div class="quantity-selector">
+                <label for="qty3">Qty</label>
+                <select id="qty3" onchange="manualUpdate('vip-ticket', this.value)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+
+    </section>
+
+    <br><br>
+
+    <h5>Conditions & Terms of Service</h5>
+
+    <label>
+        <input type="checkbox" id="terms" name="terms">
+        Ticking this indicates that you agree to the
+        <a href="">Terms and Conditions</a> of MUSICFEST.
+    </label>
+    <p id="terms-error" class="error-message">THIS FIELD IS REQUIRED</p>
+
+    <br><br>
+
+    <label>
+        <input type="checkbox" id="special-req" name="special-requirements">
+        Ticking this box indicates that you may require special arrangements.
+    </label>
+
+    <br><br>
+
+    <button class="submission" type="button" id="continue-btn">
+        <span class="btn-text">PURCHASE TICKETS</span>
+        <span class="btn-price" id="total-price">£0</span>
+    </button>
+</form>
+
+
+<br>
+
+<div class="payment" id="payment">
+    <div class="wrapper" id="payment-section">
+        <h5>Payment Details</h5>
+
+        <label for="card-number"></label>
+        <input id="card-number" name="card-number" type="text" placeholder="CARD NUMBER" maxlength="19">
+        <p id="card-number-error" class="error-message">THIS FIELD IS REQUIRED</p>
+
+        <br>
+
+        <div class="payment-row">
+            <div class="payment-field">
+                <label for="exp-date"></label>
+                <input id="exp-date" name="exp-date" type="text" placeholder="MM/YY" maxlength="5">
+                <p id="exp-date-error" class="error-message">THIS FIELD IS REQUIRED</p>
+            </div>
+
+            <div class="payment-field">
+                <label for="cvv"></label>
+                <input id="cvv" name="cvv" type="text" placeholder="CVV" maxlength="3">
+                <p id="cvv-error" class="error-message">THIS FIELD IS REQUIRED</p>
+            </div>
+        </div>
+
+        <br>
+
+        <label for="name-card"></label>
+        <input id="name-card" name="name-card" type="text" placeholder="NAME ON CARD">
+        <p id="name-card-error" class="error-message">THIS FIELD IS REQUIRED</p>
+
+        <div class="payment-actions">
+            <button class="payment-btn cancel" id="cancel-btn">CANCEL</button>
+            <button class="payment-btn" id="purchase-btn">COMPLETE PURCHASE</button>
+        </div>
+    </div>
+    <div class="success-container" id="success-animation" style="display: none;">
+        <div class="logo-item" id="logo-item"><img src="logo2.png" alt="logo"></div>
+        <div class="success-text" id="success-text">
+            Tickets secured ✅
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

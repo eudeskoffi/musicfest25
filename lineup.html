@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- ========================================
+     MUSICFEST 25 - LINEUP PAGE
+     ========================================
+     Artist lineup gallery with music player
+     ======================================== -->
+<html lang="en">
+<head>
+    <!-- Page Metadata and Stylesheets -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Introducing the Artists</title>
+    <style>
+        body {
+            overflow: hidden;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<!-- Main Content -->
+
+<!-- Navigation Menu -->
+<aside class="dropdown-container">
+    <button class="dropdown-btn" onclick="toggle()">Menu</button>
+
+    <div class="dropdown-menu" id="menu">
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="main.html">HOME</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="lineup.html">LINEUP</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="tickets.html">TICKETS</a></button>
+        <button class="btn dropdown-item" onclick="closeMenu()"><a href="schedule.html">SCHEDULE</a></button>
+    </div>
+</aside>
+
+<div class="lineup-logo">LINEUP</div>
+
+<div class="gallery-container">
+    <!-- Intro Slide -->
+    <div class="gallery-slide intro-slide active">
+        <div class="intro-content">
+            <h1>MUSICFEST 25<br>WILL BE RNB<br>BASED THIS YEAR.</h1>
+            <p class="intro-text">
+                WE HAVE LISTENED TO THE REQUESTS FORM LAST YEAR AND SERVED YOU THE FINEST ARTISTS TO MAXIMISE THIS YEAR'S EXPERIENCE
+            </p>
+            <p class="scroll-hint">CLICK RIGHT TO SEE THE ARTISTS.</p>
+        </div>
+        <div class="intro-nav-hint" onclick="changeSlide(1)">
+            <span>→</span>
+        </div>
+    </div>
+
+    <!-- Artist Slides -->
+    <div class="gallery-slide artist-slide" data-artist="SONDER" data-genre="R&B/SOUL GROUP" data-song="songs/sonder.mp3" data-song-name="Sonder - Indonesian Fantasies">
+        <div class="nav-box" onclick="changeSlide(-1)">
+            <div class="nav-preview" id="prev-0"></div>
+        </div>
+        <div class="artist-content">
+            <div class="artist-image-container">
+                <div class="placeholder-image"><img src="Sonder.jpg" alt="sonder"></div>
+            </div>
+            <h2 class="artist-name">SONDER</h2>
+            <p class="artist-genre">R&B/SOUL GROUP</p>
+            <p class="artist-description">
+                A world-renowned group with lead artist Brent Faiyaz and producers Dpat and atu.
+            </p>
+        </div>
+        <div class="nav-box" onclick="changeSlide(1)">
+            <div class="nav-preview" id="next-0"></div>
+        </div>
+    </div>
+
+    <div class="gallery-slide artist-slide" data-artist="JORJA SMITH" data-genre="R&B/SOUL SINGER" data-song="songs/jorjasmith.mp3" data-song-name="Jorja Smith - Greatest Gift (feat Lila Iké">
+        <div class="nav-box" onclick="changeSlide(-1)">
+            <div class="nav-preview" id="prev-1"></div>
+        </div>
+        <div class="artist-content">
+            <div class="artist-image-container">
+                <div class="placeholder-image"><img src="JorjaSmith.jpg" alt="jorja smith"></div>
+            </div>
+            <h2 class="artist-name">JORJA SMITH</h2>
+            <p class="artist-genre">R&B/SOUL SINGER</p>
+            <p class="artist-description">
+                A british singer with hit albums such as Lost and Found.
+            </p>
+        </div>
+        <div class="nav-box" onclick="changeSlide(1)">
+            <div class="nav-preview" id="next-1"></div>
+        </div>
+    </div>
+
+    <div class="gallery-slide artist-slide" data-artist="SMINO" data-genre="SOUL / HIP-HOP" data-song="songs/smino.mp3" data-song-name="Smino - Oxygen">
+        <div class="nav-box" onclick="changeSlide(-1)">
+            <div class="nav-preview" id="prev-2"></div>
+        </div>
+        <div class="artist-content">
+            <div class="artist-image-container">
+                <div class="placeholder-image"><img src="Smino.jpg" alt="smino"></div>
+            </div>
+            <h2 class="artist-name">SMINO</h2>
+            <p class="artist-genre">SOUL / HIP-HOP RAPPER</p>
+            <p class="artist-description">
+                Multi-talented rapper with a passion for soul and hip hop.
+            </p>
+        </div>
+        <div class="nav-box" onclick="changeSlide(1)">
+            <div class="nav-preview" id="next-2"></div>
+        </div>
+    </div>
+
+    <div class="gallery-slide artist-slide" data-artist="CHASE SHAKUR" data-genre="MODERN R&B" data-song="songs/chaseshakur.mp3" data-song-name="Chase Shakur - Sink or Swim (Bonus)">
+        <div class="nav-box" onclick="changeSlide(-1)">
+            <div class="nav-preview" id="prev-3"></div>
+        </div>
+        <div class="artist-content">
+            <div class="artist-image-container">
+                <div class="placeholder-image"><img src="chaseshakur.jpg" alt="chase shakur"></div>
+            </div>
+            <h2 class="artist-name">CHASE SHAKUR</h2>
+            <p class="artist-genre">MODERN R&B SINGER</p>
+            <p class="artist-description">
+                An underground ex-rapper turned superstar R&B singer.
+            </p>
+        </div>
+        <div class="nav-box" onclick="changeSlide(1)">
+            <div class="nav-preview" id="next-3"></div>
+        </div>
+    </div>
+
+    <div class="gallery-slide artist-slide" data-artist="SAMPHA" data-genre="R&B" data-song="songs/sampha.mp3" data-song-name="Sampha - Rose Tint">
+        <div class="nav-box" onclick="changeSlide(-1)">
+            <div class="nav-preview" id="prev-4"></div>
+        </div>
+        <div class="artist-content">
+            <div class="artist-image-container">
+                <div class="placeholder-image"><img src="Sampha.jpg" alt="sampha"></div>
+            </div>
+            <h2 class="artist-name">SAMPHA</h2>
+            <p class="artist-genre">R&B SINGER</p>
+            <p class="artist-description">
+                Known for vulnerable lyrics and smooth vocals, bringing authentic emotion to modern R&B music.
+            </p>
+        </div>
+        <div class="nav-box" onclick="changeSlide(1)">
+            <div class="nav-preview" id="next-4"></div>
+        </div>
+    </div>
+
+    <div class="gallery-slide artist-slide" data-artist="GALDIVES" data-genre="ALTERNATIVE R&B" data-song="songs/galdives.mp3" data-song-name="Galdives - Fond Adieu">
+        <div class="nav-box" onclick="changeSlide(-1)">
+            <div class="nav-preview" id="prev-5"></div>
+        </div>
+        <div class="artist-content">
+            <div class="artist-image-container">
+                <div class="placeholder-image"><img src="Galdives.jpg" alt="galdives"></div>
+            </div>
+            <h2 class="artist-name">GALDIVES</h2>
+            <p class="artist-genre">ALTERNATIVE R&B DUO</p>
+            <p class="artist-description">
+                Ethereal Duo crafting dreamy, introspective R&B with spiritual undertones and poetic storytelling.
+            </p>
+        </div>
+        <div class="nav-box" onclick="changeSlide(1)">
+            <div class="nav-preview" id="next-5"></div>
+        </div>
+    </div>
+
+    <div class="page-indicator">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

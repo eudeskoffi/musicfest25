@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- ========================================
+     MUSICFEST 25 - MAIN PAGE
+     ========================================
+     Homepage with image slider and animated info reveal
+     ======================================== -->
+<html lang="en">
+<head>
+    <!-- Page Metadata and Stylesheets -->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="design.css">
+    <title>MUSICFEST</title>
+</head>
+<body>
+<!-- Main Content -->
+<div class="main-page" id="mainPage">
+    <h1 style="text-align:center;">Musicfest 25</h1>
+    <br>
+    <br>
+    <button class="info-btn" onclick="startAnimation()">Click for More Info</button>
+</div>
+
+<div class="black-screen" id="blackScreen">
+    <div class="picture-box"><img src="Sampha.jpg" alt=""></div>
+    <div class="picture-box"><img src="chaseshakur.jpg" alt=""></div>
+    <div class="picture-box"><img src="JorjaSmith.jpg" alt=""></div>
+    <div class="picture-box"><img src="Smino.jpg" alt=""></div>
+    <div class="picture-box"><img src="Galdives.jpg" alt=""></div>
+    <div class="picture-box"><img src="Sonder.jpg" alt=""></div>
+
+    <div class="lines-container" id="linesContainer">
+        <div class="info-line">Welcome to MusicFest 2025</div>
+        <div class="info-line">This year we are hosting in Athena,Leicester</div>
+        <div class="info-line">The genre for this year is RNB</div>
+        <div class="info-line">Look out for the 15th December</div>
+        <div class="info-line">Get Ready for an Amazing Experience</div>
+    </div>
+</div>
+
+<div class="normal-layout" id="normalLayout">
+    <h1 style="text-align:center;">Musicfest 25</h1>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="normal-line">Welcome to MusicFest 2025</div>
+    <div class="normal-line">This year we are hosting in Athena,Leicester</div>
+    <div class="normal-line">The genre for this year is RNB</div>
+    <div class="normal-line">Get your tickets now on Fatsoma</div>
+    <div class="normal-line">15/12/25</div>
+
+    <!-- Navigation Menu -->
+    <aside class="dropdown-container">
+        <button class="dropdown-btn" onclick="toggle()">Menu</button>
+
+        <div class="dropdown-menu" id="menu">
+            <button class="btn dropdown-item" onclick="closeMenu()"><a href="main.html">HOME</a></button>
+            <button class="btn dropdown-item" onclick="closeMenu()"><a href="lineup.html">LINEUP</a></button>
+            <button class="btn dropdown-item" onclick="closeMenu()"><a href="tickets.html">TICKETS</a></button>
+            <button class="btn dropdown-item" onclick="closeMenu()"><a href="schedule.html">SCHEDULE</a></button>
+        </div>
+    </aside>
+
+    <main>
+        <h3 class="fade-in">
+            <br>
+            Presenting this year's artists:
+        </h3>
+        <div class="slider">
+            <div class="slide">
+                <p> Jorja smith</p>
+                <img src="JorjaSmith.jpg" alt="Jorja Smith">
+            </div>
+            <div class="slide">
+                <p> Chase Shakur</p>
+                <img src="chaseshakur.jpg" alt="Chase Shakur">
+            </div>
+            <div class="slide">
+                <p> Sonder</p>
+                <img src="Sonder.jpg" alt="Sonder">
+            </div>
+            <div class="slide">
+                <p>Sampha</p>
+                <img src="Sampha.jpg" alt="Sampha">
+            </div>
+            <div class="slide">
+                <p> Smino</p>
+                <img src="Smino.jpg" alt="Smino">
+            </div>
+            <div class="slide">
+                <p>Galdives</p>
+                <img src="Galdives.jpg" alt="Galdives">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3 class="fade-in">
+            About us
+        </h3>
+        <section class="fade-in">
+            Music Fest is an annual festival. Listening to the requests of our attendees. In the past we've worked on Afrobeats, hip-hop as well as even rock. This is the reason to our fantastic reviews from the Times, The Guardian as well as being featured on Spotify and Apple Music.
+        </section>
+    </footer>
+</div>
+
+<button class="replay-btn" id="replayBtn" onclick="replay()">↻</button>
+
+<script src="index.js"></script>
+
+</body>
+</html>
